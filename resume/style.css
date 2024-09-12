@@ -32,6 +32,7 @@ html {
     max-width: 1300px;
     margin: 0 auto;
     padding-bottom: 50px;
+    
 }
 #navContainer li {
     display: inline;
@@ -52,7 +53,7 @@ html {
 }
 nav {
     width: 100vw;
-    height: var(--navHeight);
+    height: var(--navHeight, 120px);
     top: 0;
     display: flex;
     background-color: #292f36;
@@ -126,7 +127,7 @@ nav ul.nav-links li a:hover,
 
 @media only screen and (min-width: 921px) {
     :root {
-        --navHeight: 72px;
+        height: var(--navHeight, 72px);
     }
     body {
         font-size: 1.8rem;
@@ -218,6 +219,7 @@ footer {
 
 /* Media Queries */
 @media (min-width: 900px) {
+    
     html {
         font-family: 'Poppins', sans-serif;
         overflow-anchor: none;

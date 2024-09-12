@@ -17,9 +17,8 @@ body {
     z-index: 1;
 }
 nav {
-    padding-bottom: 10px;
     width: 100vw;
-    height: var(--navHeight);
+    --navHeight: 72px;
     top: 0;
     display: flex;
     background-color: #292f36;
