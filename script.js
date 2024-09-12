@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Load the navbar content
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+
+    // Event listeners for sidebar toggle
+    document.querySelector('.menu-button').addEventListener('click', showSidebar);
+    document.querySelector('.sidebar .close-button').addEventListener('click', hideSidebar);
+});
+
 function showSidebar() {
     document.querySelector('.sidebar').classList.add('open');
     document.querySelector('.menu-button').style.display = 'none'; // Hide button when sidebar is open
