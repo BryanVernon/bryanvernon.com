@@ -1,11 +1,158 @@
 /* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background);
     color: #333;
-    transform: scale(85%);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+    width: 100vw;
+    z-index: 1;
+}
+html {
+    font-family: 'Poppins', sans-serif;
+    overflow-anchor: none;
+    font-size: 62.5%;
+}
+
+#navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+#navContainer li {
+    display: inline;
+    font-size: 2rem;
+    font-weight: 500;
+}
+#navContainer a {
+    color: white;
+    text-decoration: none;
+    transition: color 500ms;
+}
+#navContainer a:hover {
+    cursor: pointer;
+    color: #56a0d3;
+}
+#navContainer li .active {
+    color: #56a0d3;
+}
+nav {
+    width: 100vw;
+    height: var(--navHeight);
+    top: 0;
+    display: flex;
+    background-color: #292f36;
+    color: white;
+}
+
+nav h1 {
+    font-weight: 500;
+    font-size: 48px;
+    padding-left: 3px;
+    
+}
+nav .logo {
+    white-space: nowrap;
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+nav li {
+    height: 50px;
+    
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;        
+}
+nav a:hover {
+    color: #71affb;
+}
+nav ul.nav-links li a:hover, 
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #292f36;
+    z-index: 999;
+    box-shadow: -10px 0px 10px rgba(0,0,0,0.1);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 50px;
+    backdrop-filter: blur(10px);
+}
+
+/* Sidebar open state */
+.sidebar.open {
+    display: flex; /* Show when open */
+    transform: translateX(0); /* Slide in */
+}
+.sidebar.open ~ .menu-button {
+    display: none; /* Hide when sidebar is open */
+}
+.sidebar li {
+    width: 100%;
+}
+.sidebar a {
+    width: 100%;
+}
+
+@media only screen and (min-width: 921px) {
+    :root {
+        --navHeight: 72px;
+    }
+    body {
+        font-size: 1.8rem;
+        width: 100vw;
+    }
+    nav .menu-button {
+        display: none !important; /* Force hide on larger screens */
+    }
+
+    nav h1 {
+        font-size: 48px;
+    }
+}
+/* Hide the tabs and display the menu button on small screens */
+@media only screen and (max-width: 920px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block !important;
+        margin-right: 15px;
+    }
+    .sidebar.open {
+        display: flex; /* Show when open */
+        transform: translateX(0); /* Slide in */
+    }
 }
 
 header {
@@ -27,32 +174,6 @@ header {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 10px;
-}
-
-nav {
-    background-color: #0d1a2d;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
 }
 
 #container section {
@@ -99,6 +220,8 @@ footer {
 @media (min-width: 900px) {
     html {
         font-family: 'Poppins', sans-serif;
+        overflow-anchor: none;
+        font-size: 62.5%;
     }
 
     #container hr {
@@ -208,6 +331,8 @@ footer {
 @media (max-width: 900px) {
     html {
         font-family: 'Poppins', sans-serif;
+        overflow-anchor: none;
+        font-size: 62.5%;
     }
 
     #container hr {

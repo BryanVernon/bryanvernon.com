@@ -1,86 +1,157 @@
-/* Reset some default styles */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-/* Basic styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #e0f7fa; /* Light blue background */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
     color: #333;
-    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+    width: 100vw;
+    z-index: 1;
 }
-
-header {
-    background-color: #0288d1; /* Darker blue for header */
-    color: white;
-    padding: 20px;
-    text-align: center;
+html {
+    overflow-anchor: none;
+    font-size: 62.5%;
 }
-
-header h1 {
-    font-size: 2.5rem;
-}
-
-main {
-    padding: 20px;
-    max-width: 1200px; /* Wider max-width for larger screens */
-    margin: 0 auto;
-}
-
-section {
-    margin-bottom: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #0288d1; /* Header color */
-}
-
-/* Styling for the certification badges */
-#certifications {
-    max-width: 855px;
-    margin: 0 auto;
-}
-
-.certification {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(95px, 155px));
-    grid-gap: 20px; /* Space between badges */
-    justify-content: center;
-}
-
-.certification .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    border: 1px solid #0288d1;
-    box-shadow: 0px 0px 5px #8a9096;
-    background: #ffffff;
-    padding: 10px;
-}
-
 .certification .box img {
-    width: 80px; /* Adjust width as needed */
+    width: 80px;
     height: auto;
 }
 
-.certification .box p {
-    font-size: .8rem;
-    margin-top: 10px;
+#navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+#navContainer li {
+    display: inline;
+    font-size: 2rem;
+    font-weight: 500;
+}
+#navContainer a {
+    color: white;
+    text-decoration: none;
+    transition: color 500ms;
+}
+#navContainer a:hover {
+    cursor: pointer;
+    color: #56a0d3;
+}
+#navContainer li .active {
+    color: #56a0d3;
+}
+nav {
+    width: 100vw;
+    height: var(--navHeight);
+    top: 0;
+    display: flex;
+    background-color: #292f36;
+    color: white;
 }
 
-/* Additional styles for responsiveness */
-@media (max-width: 768px) {
-    .certification {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
+nav h1 {
+    font-weight: 500;
+    font-size: 48px;
+    padding-left: 3px;
+    
+}
+nav .logo {
+    white-space: nowrap;
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+nav li {
+    height: 50px;
+    
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;        
+}
+nav a:hover {
+    color: #71affb;
+}
+nav ul.nav-links li a:hover, 
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #292f36;
+    z-index: 999;
+    box-shadow: -10px 0px 10px rgba(0,0,0,0.1);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 50px;
+    backdrop-filter: blur(10px);
+}
+
+/* Sidebar open state */
+.sidebar.open {
+    display: flex; /* Show when open */
+    transform: translateX(0); /* Slide in */
+}
+.sidebar.open ~ .menu-button {
+    display: none; /* Hide when sidebar is open */
+}
+.sidebar li {
+    width: 100%;
+}
+.sidebar a {
+    width: 100%;
+}
+
+@media only screen and (min-width: 921px) {
+    :root {
+        --navHeight: 72px;
+    }
+    body {
+        font-size: 1.8rem;
+        width: 100vw;
+    }
+    nav .menu-button {
+        display: none !important; /* Force hide on larger screens */
+    }
+
+    nav h1 {
+        font-size: 48px;
     }
 }
+/* Hide the tabs and display the menu button on small screens */
+@media only screen and (max-width: 920px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block !important;
+        margin-right: 15px;
+    }
+    .sidebar.open {
+        display: flex; /* Show when open */
+        transform: translateX(0); /* Slide in */
+    }
+}
+

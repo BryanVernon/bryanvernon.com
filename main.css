@@ -17,6 +17,7 @@ body {
     z-index: 1;
 }
 nav {
+    padding-bottom: 10px;
     width: 100vw;
     height: var(--navHeight);
     top: 0;
