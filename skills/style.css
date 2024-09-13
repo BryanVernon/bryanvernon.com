@@ -123,6 +123,119 @@ nav ul.nav-links li a:hover,
 .sidebar a {
     width: 100%;
 }
+.certification {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to a new line if needed */
+    gap: 15px;
+}
+.certification .box {
+    border: 2px solid #71affb; /* Light blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px;
+    text-align: center;
+    width: 120px; /* Adjust width if necessary */
+}
+.certification .box img {
+    width: 80px;
+    height: auto;
+}
+.certification .box p {
+    margin-top: 8px;
+    font-size: 1.4rem;
+}
+
+#skillSect {
+    text-align: center;
+    max-width: 855px;
+    margin: 0 auto;
+}
+
+.sectTitle {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 40px;
+}
+
+.skillGroupTitle {
+    display: inline-block; /* Ensures the title width is based on the content */
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    /* No need to set width here; inline-block naturally fits content */
+}
+
+.skillGroupTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust as needed for vertical alignment */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the line horizontally */
+    width: 100%; /* Adjust to fit your design */
+    height: 5px; /* Thickness of the line */
+    background-color: #71affb; /* Line color */
+}
+
+/* Grid Layout */
+.skillGroup {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px, 105px));
+    grid-gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #71affb;
+    box-shadow: 0px 0px 5px #8a9096;
+    background: #ffffff;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+}
+
+.skillBox img {
+    width: 65%;
+    height: auto;
+}
+
+.skillBox p {
+    font-size: 1.4rem;
+    margin-top: 8px;
+}
+.certifications {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+    gap: 20px; /* Adjust spacing between boxes */
+    justify-content: center; /* Centers items horizontally */
+    padding: 20px; /* Adds padding around the entire section */
+}
+
+.certifications .cert {
+    border: 1px solid #71affb; /* Light blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 8px;
+    text-align: center;
+    width: 120px; /* Width of the box */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0px 0px 5px #8a9096; /* Light shadow for depth */
+}
+
+.certifications .cert img {
+    width: 80px; /* Adjust image size */
+    height: auto;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.certifications .cert p {
+    font-size: 1.4rem; /* Adjust font size as needed */
+    margin-top: 8px; /* Space above the text */
+    color: #333; /* Text color */
+}
 
 @media only screen and (min-width: 921px) {
     :root {
