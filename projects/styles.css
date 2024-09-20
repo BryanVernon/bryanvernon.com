@@ -144,6 +144,7 @@ nav ul.nav-links li a:hover,
 
 .project-description {
     margin-bottom: 16px;
+    font-size: 1.7rem !important;
 }
 
 .project-link {

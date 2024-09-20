@@ -148,13 +148,27 @@ nav ul.nav-links li a:hover,
     text-align: center;
     max-width: 855px;
     margin: 0 auto;
+    
 }
 
 .sectTitle {
     text-align: center;
     font-size: 4.5rem;
     margin-bottom: 40px;
+    position: relative; /* Necessary for the pseudo-element positioning */
 }
+
+.sectTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust as needed for vertical alignment */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the line horizontally */
+    width: 19%; /* Adjust to fit your design */
+    height: 5px; /* Thickness of the line */
+    background-color: #71affb; /* Line color */
+}
+
 
 .skillGroupTitle {
     display: inline-block; /* Ensures the title width is based on the content */
@@ -206,6 +220,7 @@ nav ul.nav-links li a:hover,
 .skillBox p {
     font-size: 1.4rem;
     margin-top: 8px;
+    font-weight: 540;
 }
 .certifications {
     display: flex;
