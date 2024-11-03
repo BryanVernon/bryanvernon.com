@@ -3,8 +3,8 @@ var apiUrl = "https://potl5cdpxi.execute-api.us-east-1.amazonaws.com/prod/produc
 fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-        document.getElementById('count').innerHTML = data;
-        console.log(data);
+        // Assuming the response has properties 'unique_visits' and 'total_visits'
+        document.getElementById('unique_visits').innerHTML = data.unique_visits;
     })
     .catch(error => console.error('Error fetching data:', error));
 
