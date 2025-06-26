@@ -182,15 +182,28 @@ nav ul.nav-links li a:hover,
 
 /* Grid Layout */
 .skillGroup {
-    display: flex;
+    display: absolute;
     flex-wrap: wrap; /* Allows the items to wrap onto the next line */
-    justify-content: center; /* Center the items horizontally */
+    justify-content: left; /* Center the items horizontally */
     gap: 20px; /* Space between the items */
     margin-bottom: 40px;
 }
 
 
+/* Flex Container for Project Boxes */
+/* Flex Container for Project Boxes */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Larger box styling */
 .box {
+    flex: 1 1 450px; /* Increased the base width of each box */
+    max-width: 45%; /* Allow up to 45% of the container width for larger boxes */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -198,18 +211,29 @@ nav ul.nav-links li a:hover,
     border: 1px solid #71affb;
     box-shadow: 0px 0px 5px #8a9096;
     background: #ffffff;
-    padding: 10px;
-    justify-content: center;
+    padding: 20px; /* Extra padding for more spacing */
     text-align: center;
-    width: 450px;
-    height: 450px;
 }
 
+/* Image styling for larger images */
 .skillBox img {
-    width: 100%; /* Set to 100% to take full width of the box */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 500px; /* Optional: Set a maximum width if needed */
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Limit the image width if needed */
+    margin-bottom: 16px;
 }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .box {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+
 
 
 .skillBox p {

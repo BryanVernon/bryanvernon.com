@@ -207,7 +207,7 @@ p:not(:last-child) {
     max-width: calc(var(--hexMaxWidth) - 8px);
     max-height: calc(var(--hexMaxHeight) - 8px);
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-    background-image: url("icons/Headshot.jpg");
+    background-image: url("Headshot.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -271,7 +271,7 @@ p:not(:last-child) {
     font-weight: 700;
 }
 
-@media only screen and (min-width: 921px) {
+@media only screen and (min-width: 1200px) {
     :root {
         --navHeight: 72px;
     }
@@ -312,7 +312,7 @@ p:not(:last-child) {
     }
 }
 /* Hide the tabs and display the menu button on small screens */
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 1200px) {
     .hideOnMobile {
         display: none;
     }

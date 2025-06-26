@@ -43,6 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar-container').innerHTML = data;
+
+            // After navbar is injected, now attach event listeners
+            const menuButton = document.querySelector('.menu-button');
+            const closeButton = document.querySelector('.sidebar .close-button');
+
+            if (menuButton && closeButton) {
+                menuButton.addEventListener('click', showSidebar);
+                closeButton.addEventListener('click', hideSidebar);
+            }
         })
         .catch(error => console.error('Error loading navbar:', error));
 });
